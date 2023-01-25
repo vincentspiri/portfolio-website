@@ -3,26 +3,83 @@
     font-weight: 300;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 :root {
     --color1: rgba(161, 221, 216, 0.9);
-    --color1-light: rgb(147, 220, 205);
     --color2: #101414;
     --color3-dark: rgb(40, 40, 40);
     --color4: rgb(216, 216, 216);
-    --color5: rgba(255, 72, 72, 0.4);
     --card-color: rgb(23, 23, 23);
-    --text-color: #bdc3c2;
+    --pcolor: rgb(235, 235, 235);
 }
 
+/*Animations*/
+
+@keyframes background-pan {
+    from {
+        background-position: 0% center;
+    }
+    to {
+        background-position: -200% center;
+    }
+}
+
+.blue-pop {
+    animation: background-pan 3s linear infinite;
+    background: linear-gradient(
+        to right,
+        rgb(50, 102, 255),
+        rgb(119, 222, 213),
+        rgb(202, 221, 254),
+        rgb(119, 222, 213),
+        rgb(50, 102, 255)
+    );
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.red-pop {
+    animation: background-pan 3s linear infinite;
+    background: linear-gradient(
+        to right,
+        rgb(255, 50, 57),
+        rgb(249, 155, 55),
+        rgb(254, 207, 53),
+        rgb(249, 155, 55),
+        rgb(255, 50, 57)
+    );
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.bounce {
+    position:relative;
+    transition: top 300ms ease;
+    top: 0px;
+}
+
+.bounce:hover {
+    transition: top 300ms ease;
+    top: -3px; 
+}
+
+/*Basic element styles*/
+
 body {
-    background-color: var(--color2);
+    background: linear-gradient(
+        176deg,
+        var(--color2) 50%,
+        #212735 100%
+    );
+    background-attachment: fixed;
 }
 
 .nav-top ul {
-    background-color: var(--color1);
     list-style-type: none;
     position: fixed;
     top: 0;
@@ -39,86 +96,101 @@ body {
     display: block;
     text-decoration: none;
     font-size: 18px;
-    color: var(--color2);
+    color: var(--pcolor);
     font-weight: 550;
     padding: 16px;
 }
 
 .nav-top li a:hover {
-    background-color: var(--color3-dark);
-    color: var(--color1);
+    background: linear-gradient(
+        to right,
+        rgb(249, 155, 55),
+        rgb(255, 50, 57)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-/*Left "navigation" bar
-TODO: remove and only keep social media icons
-*/
-
 .nav-left {
-    margin-left: 10px;
     position: fixed;
     top: 0;
+    left: 20px;
     width: 50px;
     height: 100%;
     z-index: 1;
 }
 
 .nav-left ul {
+    width: 100%;
+    padding: 0;
     list-style: none;
-    margin-top: 70vh;
+    margin-top: 50vh;
 }
 
 .nav-left li {
-    text-align: center;
+    padding: 4px 0;
     color: var(--color1);
 }
 
 .nav-left a {
     display: block;
-    position:relative;
     font-size: 26px;
-    padding: 6px;
     color: var(--color4);
-    transition: top 300ms ease;
-    top: 0px;
 }
 
 .nav-left a:hover {
     color: rgb(0, 138, 207);
-    transition: top 300ms ease;
-    top: -3px;   
 }
 
-h2 {
-    font-size: 50px;
-    font-weight: 250;
-    color: var(--color1);
+p {
+    font-size: 20px;
+    color: var(--pcolor);
 }
 
 /*Introduction*/
 
 .introduction {
     color: var(--color1);
-    text-align: center;
     height:  100vh;
-    padding-top: 10%;
+    margin-bottom: 5vh;
+}
+
+.introduction h2 {
+    position: relative;
+    top: 30%;
 }
 
 .introduction h4 {
-    font-size: 18px;
-    color: var(--text-color);
+    position: relative;
+    top: 30%;
+}
+
+.introduction p {
+    width: 50%;
+    margin: 0 auto;
+    text-align: left;
+    position: relative;
+    top: 45%;
 }
 
 /*About section*/
 
 .about {
-    color: rgba(255, 255, 255, 0.8);
-    text-align: center;
-    height: 100vh;
+    padding-top: 25vh;
+    margin-bottom: 40vh;
+}
+
+.about h2 {
+    font-weight: 250;
+    font-size: 50px;
+    color: var(--color1);
 }
 
 .about hr {
     width: 50%;
     margin: 30px auto;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .about p {
@@ -132,90 +204,122 @@ h2 {
 /*Projects section*/
 
 .projects {
-    text-align: center;
-    height: 100vh;
+    margin-top: 15vh;
+    padding-top: 10vh;
+    margin-bottom: 40vh;
     color: var(--color1);
 }
 
-.projects h1 {
-    margin-bottom: 8vh;
+.projects h2 {
+    font-weight: 250;
+    font-size: 50px;
+    color: var(--color1);
 }
 
-.cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    max-width: 916px;
-    width: calc(80% - 50px);
-    margin: 0 auto;
+.projects hr {
+    width: 50%;
+    margin: 30px auto;
+    color: rgba(255, 255, 255, 0.8);
 }
 
-.cards:hover > .card > .card-border {
-    opacity: 1;
+.new-grid {
+    box-sizing: content-box;
+    width: 60%;
+    margin: 6vh auto 0 auto;
 }
 
-.card {
-    background-color: rgba(255, 255, 255, 0.1);
-    width: 300px;
-    height: 300px;
-    border-radius: 8px;
-    cursor: pointer;
+.new-grid .row {
+    margin-bottom: 8px;
+}
+
+.lmao {
+    background-color: rgba(255, 255, 255, 0.02);
+    border-radius: 5px;
+    padding-bottom: 1px;
     position: relative;
 }
 
-.card:hover::before{
-    opacity: 1;
-}
-
-.card::before {
+.lmao::before {
     background: radial-gradient(
-        800px circle at var(--mouse-x) var(--mouse-y),
+        800px circle at var(--test-x) var(--test-y),
         rgba(255, 255, 255, 0.15),
         transparent 40%
     );
     z-index: 3;
 }
 
-.card-border {
+.lmao-border {
     background: radial-gradient(
-        400px circle at var(--mouse-x) var(--mouse-y),
+        400px circle at var(--test-x) var(--test-y),
         rgba(255, 255, 255, 0.9),
         transparent 40%
     );
     z-index: 1;
 }
 
-.card::before, .card-border{
+.lmao::before, .lmao-border {
     position: absolute;
+    top: 0px;
+    left: 0px;
     width: 100%;
     height: 100%;
-    left: 0px;
-    top: 0px;
-    content: "";
+    content: '';
     border-radius: inherit;
     opacity: 0;
-    transition-duration: opacity 500ms;
+    transition: opacity 150ms;
 }
 
-.card-content {
-    background-color: var(--card-color);
-    border-radius: 8px;
+.lmao:hover::before, .lmao-border{
+    opacity: 1;
+}
+
+.lmao-content {
+    width: 100%;
+    height: 100%;
     margin: 1px;
-    width: calc(100% - 2px);
-    height: calc(100% - 2px);
+    padding: 0px 1px;
+    border-radius: inherit;
     position: relative;
+    top: 1px;
+    right: 1px;
     z-index: 2;
 }
 
-.card-content img{
+.lmao-content img {
     width: 100%;
     height: 100%;
-    border-radius: 8px;
+    position: relative;
+    border-radius: 5px;
 }
 
 /*Contact section*/
 
 .contact {
-    text-align: center;
+    color: var(--color1);
+    padding-top: 10vh;
+    margin-bottom: 40vh;
+}
+
+.contact h2 {
+    font-weight: 250;
+    font-size: 50px;
     color: var(--color1);
 }
+
+/*Footer*/
+footer {
+    height: 200px;
+}
+
+/*Scroll effect*/
+.hidden {
+    opacity: 0;
+}
+
+.show {
+    transition: opacity 1000ms;
+    opacity: 1;
+}
+
+/*TOOD:
+middle lmao has 1 extra pixel of padding*/
