@@ -317,7 +317,7 @@ footer {
 }
 
 .show {
-    transition: opacity 1000ms;
+    transition: opacity 750ms;
     opacity: 1;
 }
 
