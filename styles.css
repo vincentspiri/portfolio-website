@@ -112,6 +112,8 @@ body {
     -webkit-text-fill-color: transparent;
 }
 
+/*Navigation Left aka. social links*/
+
 .nav-left {
     position: fixed;
     top: 0;
@@ -323,3 +325,6 @@ footer {
 
 /*TOOD:
 middle lmao has 1 extra pixel of padding*/
+
+
+/*TESTING*/
