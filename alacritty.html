@@ -1,31 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Alacritty Theme</title>
         <link rel="stylesheet" href="styles.css">
-    
+
         <!--Bootstrap-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+            crossorigin="anonymous"></script>
 
         <!--font awesome libraries-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
         <!--font libraries-->
         <link href="https://pvinis.github.io/iosevka-webfont/3.4.1/iosevka.css" rel="stylesheet" />
-    
-        <script defer src="./main.js"></script>
+
     </head>
 </head>
+
 <body>
+    <nav class="nav-top">
+        <ul>
+            <li class="bounce" style="float: left">
+                <a href="index.html" style="padding-left: 0">
+                    <i class="fa fa-arrow-left"></i> Go Back</a></li>
+        </ul>
+    </nav>
     <main>
-        <img class="img-responsive w-25 mx-auto d-block" src="images/alacritty.png" alt="Alacritty Logo">
-        <img class="img-responsive w-50 mx-auto d-block rounded" src="images/alacritty_preview.png" alt="">
+        <div class="container icon">
+            <div class="row">
+                <img class="img-responsive w-25 mx-auto d-block" src="images/alacritty.png" alt="Alacritty Logo">
+            </div>
+            <div class="spacer">
+                <a href="alacritty.yml">
+                    <button class="download" type="button">Download Theme <i class="fa fa-download"></i></button>
+                </a>
+            </div>
+            <div class="row hidden">
+                <div class="col-lg-6 position-relative">
+                    <img class="img-responsive w-75 rounded position-absolute end-0 me-4"
+                        src="images/alacritty_preview.png" alt="">
+                </div>
+                <div class="col-lg-6">
+                    <p class="w-75 ms-3">Alacritty is a modern terminal emulator available
+                        on Windows, macOS, and Linux with many features including Vi
+                        Mode, Regex Hints, and Search which allows searching within the
+                        scrollback buffer. <br>Many people use custom themes for their
+                        terminal and I am no different. I prefer to have my terminal
+                        background dark and a little translucent with my text color
+                        being slightly blue. If you like how my terminal looks you can
+                        download my theme <a href="#">Here</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
     </main>
+    <footer></footer>
+    <script>
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add("show");
+                    observer.unobserve(e);
+                }
+            });
+        }, { threshold: 1 });
+        document.querySelectorAll(".hidden").forEach(e => observer.observe(e));    
+    </script>
 </body>
+
 </html>

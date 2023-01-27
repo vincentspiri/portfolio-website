@@ -20,6 +20,7 @@
     from {
         background-position: 0% center;
     }
+
     to {
         background-position: -200% center;
     }
@@ -27,14 +28,12 @@
 
 .blue-pop {
     animation: background-pan 3s linear infinite;
-    background: linear-gradient(
-        to right,
-        rgb(50, 102, 255),
-        rgb(119, 222, 213),
-        rgb(202, 221, 254),
-        rgb(119, 222, 213),
-        rgb(50, 102, 255)
-    );
+    background: linear-gradient(to right,
+            rgb(50, 102, 255),
+            rgb(119, 222, 213),
+            rgb(202, 221, 254),
+            rgb(119, 222, 213),
+            rgb(50, 102, 255));
     background-size: 200%;
     background-clip: text;
     -webkit-background-clip: text;
@@ -43,14 +42,12 @@
 
 .red-pop {
     animation: background-pan 3s linear infinite;
-    background: linear-gradient(
-        to right,
-        rgb(255, 50, 57),
-        rgb(249, 155, 55),
-        rgb(254, 207, 53),
-        rgb(249, 155, 55),
-        rgb(255, 50, 57)
-    );
+    background: linear-gradient(to right,
+            rgb(255, 50, 57),
+            rgb(249, 155, 55),
+            rgb(254, 207, 53),
+            rgb(249, 155, 55),
+            rgb(255, 50, 57));
     background-size: 200%;
     background-clip: text;
     -webkit-background-clip: text;
@@ -58,24 +55,22 @@
 }
 
 .bounce {
-    position:relative;
+    position: relative;
     transition: top 300ms ease;
     top: 0px;
 }
 
 .bounce:hover {
     transition: top 300ms ease;
-    top: -3px; 
+    top: -3px;
 }
 
 /*Basic element styles*/
 
 body {
-    background: linear-gradient(
-        176deg,
-        var(--color2) 50%,
-        #212735 100%
-    );
+    background: linear-gradient(176deg,
+            var(--color2) 50%,
+            #212735 100%);
     background-attachment: fixed;
 }
 
@@ -102,11 +97,9 @@ body {
 }
 
 .nav-top li a:hover {
-    background: linear-gradient(
-        to right,
-        rgb(249, 155, 55),
-        rgb(255, 50, 57)
-    );
+    background: linear-gradient(to right,
+            rgb(249, 155, 55),
+            rgb(255, 50, 57));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -154,7 +147,7 @@ p {
 
 .introduction {
     color: var(--color1);
-    height:  100vh;
+    height: 100vh;
     margin-bottom: 5vh;
 }
 
@@ -242,24 +235,21 @@ p {
 }
 
 .lmao::before {
-    background: radial-gradient(
-        800px circle at var(--test-x) var(--test-y),
-        rgba(255, 255, 255, 0.15),
-        transparent 40%
-    );
+    background: radial-gradient(800px circle at var(--test-x) var(--test-y),
+            rgba(255, 255, 255, 0.15),
+            transparent 40%);
     z-index: 3;
 }
 
 .lmao-border {
-    background: radial-gradient(
-        400px circle at var(--test-x) var(--test-y),
-        rgba(255, 255, 255, 0.9),
-        transparent 40%
-    );
+    background: radial-gradient(400px circle at var(--test-x) var(--test-y),
+            rgba(255, 255, 255, 0.9),
+            transparent 40%);
     z-index: 1;
 }
 
-.lmao::before, .lmao-border {
+.lmao::before,
+.lmao-border {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -271,7 +261,8 @@ p {
     transition: opacity 150ms;
 }
 
-.lmao:hover::before, .lmao-border{
+.lmao:hover::before,
+.lmao-border {
     opacity: 1;
 }
 
@@ -327,4 +318,29 @@ footer {
 middle lmao has 1 extra pixel of padding*/
 
 
-/*TESTING*/
+/*Alacritty Theme page*/
+.icon {
+    margin-top: 25vh;
+}
+
+.spacer {
+    height: 50vh;
+    text-align: center;
+}
+
+.download {
+    margin-top: 10vh;
+    font-size: 1.4rem;
+    font-weight: 400;
+    padding: .5rem 2.4rem .5rem 3rem;
+    color: white;
+    border: solid 3px transparent;
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(101deg, #78e4ff, rgb(50, 102, 255));
+    background-origin: border-box;
+    box-shadow: 2px 1000px 1px #101414 inset;
+}
+
+.download:hover {
+    box-shadow: none;
+    color: white;
+}
